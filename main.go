@@ -76,7 +76,8 @@ func main() {
 				}
 
 				if _, ok := db[userId]; !ok {
-					db[userId] = make(wallet)
+					bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, "Не добавлен такой кошелек"))
+					continue
 				}
 
 				db[userId][command[1]] -= money
