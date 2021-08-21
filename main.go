@@ -111,7 +111,7 @@ func main() {
 }
 
 func getPrice(symbol string) (float64, error) {
-	url := fmt.Sprintf("api.binance.com/api/v3/ticker/price?symbol=%sRUB", symbol)
+	url := fmt.Sprintf("https://api.binance.com/api/v3/ticker/price?symbol=%sRUB", symbol)
 	resp, err := http.Get(url)
 	if err != nil {
 		return 0, err
