@@ -87,7 +87,7 @@ func main() {
 					bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, "Неверная команда"))
 				}
 
-				delete(db, userId)
+				delete(db[userId], command[1])
 
 			case "SHOW":
 				resp := ""
