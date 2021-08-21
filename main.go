@@ -21,7 +21,7 @@ type wallet map[string]float64
 var db = map[int]wallet{}
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI("1976182851:AAEMzRrjcwucCWyf5lPSRqC6SsoB1NZHDlU")
+	bot, err := tgbotapi.NewBotAPI("")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -75,7 +75,7 @@ func main() {
 					continue
 				}
 
-				if _, ok := db[userId]; !ok {
+				if db[userId] {
 					bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, "Не добавлен такой кошелек"))
 					continue
 				}
