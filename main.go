@@ -107,16 +107,11 @@ func main() {
 				bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, "Неверная команда"))
 				continue
 		}
-		//fmt.Println(command)
-
-		//log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
-
-		//bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text))
 	}
 }
 
 func getPrice(symbol string) (float64, error) {
-	url := fmt.Sprintf("api.binance.com/api/v3/ticker/price?symbol=%sUSDT", symbol)
+	url := fmt.Sprintf("api.binance.com/api/v3/ticker/price?symbol=%sRUB", symbol)
 	resp, err := http.Get(url)
 	if err != nil {
 		return 0, err
