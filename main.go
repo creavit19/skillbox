@@ -75,7 +75,7 @@ func main() {
 					continue
 				}
 
-				if db[userId] {
+				if _, ok := db[userId]; !ok {
 					bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, "Не добавлен такой кошелек"))
 					continue
 				}
